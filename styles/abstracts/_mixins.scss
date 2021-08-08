@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin bp($point) {
+  // the base style is global across all breakpoints
+  // then media queries are applied as the viewport width or display resolution increases
+
+  // VIEWPORT SIZES
+  $bp-phone: "screen and (max-width: 480px)"; // phone vertically & up
+  $bp-tablet: "screen and (max-width: 768px)"; // tablet vertically & up
+  $bp-laptop: "screen and (min-width: 1024px)"; // laptop & up
+  $bp-monitor: "screen and (min-width: 1440px)"; // monitor & up
+
+  // MEDIA QUERIES
+  @if $point == phone {
+    // phone
+    @media #{$bp-phone} {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    // tablet
+    @media #{$bp-tablet} {
+      @content;
+    }
+  }
+  @if $point == laptop {
+    // laptop
+    @media #{$bp-laptop} {
+      @content;
+    }
+  }
+  @if $point == monitor {
+    // monitor
+    @media #{$bp-monitor} {
+      @content;
+    }
+  }
+} // end mixin bp
+
+@mixin img-center($width, $border-radius) {
+  border-radius: $border-radius;
+  width: $width;
+  display: block;
+  margin: 0 auto;
+}
+
+@mixin heading-image($img-path) {
+  .bg-heading {
+    width: 100%;
+
+    display: grid;
+    place-items: center;
+    position: relative;
+    h1 {
+      position: relative;
+    }
+    &::before {
+      content: "";
+      background-image: $img-path;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.3;
+    }
+  }
+}
