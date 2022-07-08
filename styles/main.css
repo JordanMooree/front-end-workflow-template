@@ -29,6 +29,13 @@ main {
   display: block;
 }
 
+ul {
+  margin: 0;
+  /* To remove default bottom margin */
+  padding: 0;
+  /* To remove default left padding */
+}
+
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -475,7 +482,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 599px) {
   .header .nav .hamburger {
     display: block;
   }
@@ -490,7 +497,7 @@ body {
   list-style: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 599px) {
   .header .nav .nav-ul {
     display: none;
     width: 100%;
@@ -545,7 +552,7 @@ body {
   transition: 0.3s;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 599px) {
   .header .nav .nav-ul li:last-child a {
     padding: 0;
   }
@@ -574,5 +581,31 @@ body {
   .header .nav .nav-ul li a {
     color: white;
   }
+}
+
+.hamburger .line {
+  background-color: #ededed;
+  display: block;
+  height: 2px;
+  margin-bottom: 3px;
+  -webkit-transition: opacity 250ms, -webkit-transform 250ms;
+  transition: opacity 250ms, -webkit-transform 250ms;
+  transition: transform 250ms, opacity 250ms;
+  transition: transform 250ms, opacity 250ms, -webkit-transform 250ms;
+  width: 18px;
+}
+
+.hamburger .hide {
+  opacity: 0;
+}
+
+.hamburger .show-1 {
+  -webkit-transform: translateY(5px) rotate(45deg);
+          transform: translateY(5px) rotate(45deg);
+}
+
+.hamburger .show-2 {
+  -webkit-transform: translateY(-5px) rotate(-45deg);
+          transform: translateY(-5px) rotate(-45deg);
 }
 /*# sourceMappingURL=main.css.map */

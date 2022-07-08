@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="YOUR DESCRIPTION OF WEBSITE" />
+
+    <!-- Title -->
     <title>Document</title>
-    <script src="./scripts/script.js"></script>
+
+    <!-- Favicon, Fonts, CDN Links, etc. -->
     <link rel="stylesheet" href="./styles/main.css" />
+
+    <!-- Scripts -->
+    <script src="./scripts/script.js"></script>
   </head>
   <body>
-    <!---->
+    <!-- Semantics in HTML found here: https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html -->
+
+    <!-- Header and navigation-->
     <header class="header">
       <nav class="nav">
-        <img src="{IMG-SOURCE}" class="logo" alt="logo" />
-        <!--Hamburger menu-->
-        <img
-          src="./images/icon-hamburger.svg"
-          id="hamburger"
-          class="hamburger"
-        />
+        <img src="{IMG-SOURCE}" class="logo" alt="Your logo" />
+        <!--
+        Hamburger menu or you can use styled <span> tags and animate them on click(recommended). Example in *React*:
+        <span
+            className="line"
+            style={
+              isClicked
+                ? { transform: "translateY(5px) rotate(45deg)" }
+                : { transform: "none" }
+            }
+          ></span>
+          <span
+            className="line"
+            style={isClicked ? { opacity: 0 } : { opacity: 1 }}
+          ></span>
+          <span
+            className="line"
+            style={
+              isClicked
+                ? { transform: "translateY(-5px) rotate(-45deg)" }
+                : { transform: "none" }
+            }
+          ></span>  
+
+          NOTE: You must add the class "line" to each span tag with height, color, and width in your CSS.
+
+          EXAMPLE OF CSS applied to the span tags:
+          .line {
+            background-color: var(--color-primary);
+            display: block;
+            height: 2px;
+            margin-bottom: 3px;
+            transition: transform 250ms, opacity 250ms;
+            width: 18px;
+          }
+        -->
+        <div class="hamburger" id="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
         <!--Navigation menu-->
         <ul class="nav-ul" id="nav-ul">
           <li><a href="#about">About</a></li>

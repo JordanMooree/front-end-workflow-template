@@ -1,0 +1,20 @@
+.hamburger {
+  .line {
+    background-color: $light-grey;
+    display: block;
+    height: 2px;
+    margin-bottom: 3px;
+    transition: transform 250ms, opacity 250ms;
+    width: 18px;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+  .show-1 {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .show-2 {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}

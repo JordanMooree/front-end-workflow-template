@@ -1,10 +1,10 @@
-# Welcome to Front End Junior Workflow Template!
+# Welcome to Front End Template!
 
-Here you will find the following workflows with common solutions to:
+Here you will find the following workflows with solutions to:
 
 - Building a website from scratch
 - Navigation for mobile and desktop for responsive design
-- Sass 7-1 Architecture
+- Sass 7-1 Architecture (Credit to [KittyGiraudel's Sass Boilerplate](https://github.com/KittyGiraudel/sass-boilerplate))
 - Common mixins that help simplify your CSS code for common breakpoints in different screen sizes
 
 _Note:_ **Ensure your IDE can watch your main.scss file as you work through your Sass code! The index.html file is hooked in with main.css file. I prefer using VSCode along with the Live Sass Compiler.**

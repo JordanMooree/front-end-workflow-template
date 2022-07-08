@@ -43,7 +43,7 @@
   // then media queries are applied as the viewport width or display resolution increases
 
   // VIEWPORT SIZES
-  $bp-phone: "screen and (max-width: 480px)"; // phone vertically & up
+  $bp-phone: "screen and (max-width: 599px)"; // phone vertically & up
   $bp-tablet: "screen and (max-width: 768px)"; // tablet vertically & up
   $bp-laptop: "screen and (min-width: 1024px)"; // laptop & up
   $bp-monitor: "screen and (min-width: 1440px)"; // monitor & up
